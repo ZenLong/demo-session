@@ -8,26 +8,26 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 
 /**
- * 类描述：
+ * 测试入口
  *
  * @author KelvinZ
  * @date 2020-03-10 14:09
  */
 @RestController
 public class TestController {
-    private Logger log = LoggerFactory.getLogger(this.getClass());
+	private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping("/setSession")
-    public String setSession(HttpSession session) {
-        log.info(session.getId());
-        session.setAttribute("kelvin", "test ok");
-        return session.getId();
-    }
+	@RequestMapping("/setSession")
+	public String setSession(HttpSession session) {
+		log.info(session.getId());
+		session.setAttribute("kelvin", "test ok");
+		return session.getId();
+	}
 
-    @RequestMapping("/getSession")
-    public Object getSession(HttpSession session) {
-        log.info(session.getId());
-        return session.getAttribute("kelvin");
-    }
+	@RequestMapping("/getSession")
+	public Object getSession(HttpSession session) {
+		log.info(session.getId());
+		return session;
+	}
 
 }

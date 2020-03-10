@@ -2,7 +2,6 @@ package com.codewalnut.demo.session;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
@@ -14,12 +13,12 @@ import org.springframework.context.annotation.PropertySources;
  */
 @SpringBootApplication
 @PropertySources(value = {
-        @PropertySource(value = "classpath:application-redis.properties")
+		@PropertySource(value = "classpath:application-redis.properties")
 })
 public class DemoSessionApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoSessionApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(DemoSessionApplication.class, args);
+	}
 
 }
