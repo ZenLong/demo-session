@@ -2,6 +2,7 @@
 Springboot 提供了简便快捷的方法来集成redis并将之使用为服务端的共享session的存储。
 
 ## 要点
+使用@EnableRedisHttpSession注解声明使用session框架。
 
 ### 关键依赖
 	<dependency>
