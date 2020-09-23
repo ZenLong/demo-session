@@ -1,0 +1,6 @@
+server:
+  servlet:
+    context-path: /session
+  port: 8080
+  compression:
+    enabled: true

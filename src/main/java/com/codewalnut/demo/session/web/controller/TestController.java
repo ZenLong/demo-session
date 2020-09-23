@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.Enumeration;
 
 /**
  * 测试入口
  *
  * @author KelvinZ
- * @date 2020-03-10 14:09
  */
 @RestController
 public class TestController {
@@ -27,6 +27,11 @@ public class TestController {
 	@RequestMapping("/getSession")
 	public Object getSession(HttpSession session) {
 		log.info(session.getId());
+		Enumeration<String> attrNames = session.getAttributeNames();
+		while (attrNames.hasMoreElements()) {
+			String name = attrNames.nextElement();
+			log.info("{} = {}", name, session.getAttribute(name));
+		}
 		return session;
 	}
 
